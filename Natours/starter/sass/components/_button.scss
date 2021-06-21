@@ -1,0 +1,62 @@
+.btn {
+
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        /* This works as normal block element */
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        /* for btn::after to be abosule */
+        position: relative;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-grey-black, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-grey-black, .2);
+    }
+
+    /* after basically means creating an element after the specified element*/
+    &::after {
+        /* These two properties are necessary */
+        content: "";
+        display: inline-block;
+
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white {
+        background-color: $color-grey-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-grey-white;
+        }
+    }
+
+    &--animated {
+        animation: MoveInButton .5s ease-out .75s;
+        /* this will make the element start from 0 (??) */
+        animation-fill-mode: backwards;
+    }
+}

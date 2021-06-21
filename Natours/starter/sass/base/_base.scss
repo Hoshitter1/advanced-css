@@ -1,0 +1,20 @@
+/* this means all selector */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* This will inherit body element's property */
+    box-sizing: inherit;
+}
+
+html {
+    /* 10px/user default *user default=16px */
+    // This defines what 1rem is
+    font-size: 62.5%;
+}
+
+body {
+    /* To not add padding and margin to its heigh and width  */
+    box-sizing: border-box;
+}
