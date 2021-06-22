@@ -16,7 +16,7 @@
 
     &:hover {
         transform: translateY(-0.3rem);
-        box-shadow: 0 1rem 2rem rgba($color-grey-black, .2);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
 
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
@@ -26,7 +26,7 @@
 
     &:active {
         transform: translateY(-0.1rem);
-        box-shadow: 0 0.5rem 1rem rgba($color-grey-black, .2);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, .2);
     }
 
     /* after basically means creating an element after the specified element*/
@@ -46,11 +46,11 @@
     }
 
     &--white {
-        background-color: $color-grey-white;
+        background-color: $color-white;
         color: $color-grey-dark;
 
         &::after {
-            background-color: $color-grey-white;
+            background-color: $color-white;
         }
     }
 
@@ -58,5 +58,35 @@
         animation: MoveInButton .5s ease-out .75s;
         /* this will make the element start from 0 (??) */
         animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+
+    &:link,
+    &:visited {
+        color: $color-primary;
+        text-transform: uppercase;
+        text-decoration: underline;
+
+        //border-bottom : 1px solid $color-primary;
+        // This way you can treat this text like a box model
+        // This means you can use padding and margin etc
+        display: inline-block;
+        padding: 6px 18px;
+        border-radius: 10rem;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
     }
 }

@@ -9,7 +9,7 @@ body {
 }
 
 .heading-primary {
-    color: $color-grey-white;
+    color: $color-white;
     text-transform: uppercase;
     /* 
     This prevents the elements from moving upwards at the end of animation
@@ -66,4 +66,18 @@ body {
 
     transition: all .2s;
 
+}
+
+.heading-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 1.6rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
 }
