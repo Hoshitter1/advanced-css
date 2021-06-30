@@ -1,0 +1,19 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .15;
+    overflow: hidden;
+
+    &__content {
+        // These allow the video to cover the entire section
+        height: 100%;
+        width: 100%;
+        // relatively new property
+        // pretty much like cover
+        object-fit: cover;
+    }
+}

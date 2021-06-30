@@ -1,5 +1,9 @@
 .btn {
 
+    // single & is used for button element
+    // since link and visited get applied to anchor element
+    // but not button element
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -12,6 +16,10 @@
         /* for btn::after to be abosule */
         position: relative;
         font-size: 1.6rem;
+
+        // change for button element
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -24,7 +32,9 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        outline: none;
         transform: translateY(-0.1rem);
         box-shadow: 0 0.5rem 1rem rgba($color-black, .2);
     }
@@ -51,6 +61,15 @@
 
         &::after {
             background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
         }
     }
 
